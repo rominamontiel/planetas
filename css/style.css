@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
     overflow: hidden;
     position: relative;
-    background: url(/img/estrellas.jpg) no-repeat;
+    background: url("/img/estrellas.jpg") no-repeat;
     background-size: cover; }
     body section .solar-system {
       height: 90vh;
