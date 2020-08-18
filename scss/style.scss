@@ -44,7 +44,7 @@ body{
         min-height: 100vh;
         overflow: hidden;
         position: relative;
-        background: url("/img/estrellas.jpg") no-repeat;
+        background: url(/img/estrellas.jpg) no-repeat;
         background-size: cover;
 
         .solar-system{
@@ -74,20 +74,13 @@ body{
                 border: 1.5px solid rgba(255, 255, 255, 0.3);
                 animation: giro $time-mercurio linear infinite;
 
-                &::before, img{
-                    content: '';
+                img{
                     position: absolute;
                     top: -.5rem;
                     left: 50%;
                     transform: translateX(-50%);
-                    width: 1rem;
                     height: 1rem;
-                    // background: linear-gradient(0deg, #fbfaf7, #58544a);
                     border-radius: 50%;
-                }
-
-                img{
-                    width: auto;
                 }
 
                 &.mercurio{
