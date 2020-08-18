@@ -84,5 +84,9 @@ body {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+@media (max-width: 992px) {
+  body section .solar-system {
+    height: 90vw;
+    width: 90vw; } }
 
 /*# sourceMappingURL=style.css.map */

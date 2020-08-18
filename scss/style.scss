@@ -142,3 +142,10 @@ body{
         transform: rotate(360deg) ;
     }
 }
+
+@media (max-width:992px){
+    body section .solar-system {
+        height: 90vw;
+        width: 90vw;
+    }
+}
