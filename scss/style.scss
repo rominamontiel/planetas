@@ -1,0 +1,151 @@
+$time-mercurio: 1s;
+$time-venus: 2.5;
+$time-tierra: 4.1;
+$time-marte: 7.8;
+$time-jupiter: 49.2;
+$time-saturno: 122.2;
+$time-urano: 348.7;
+$time-neptuno: 684;
+
+// $dist-mercurio: 1.2%;
+// $dist-venus: 2.45%;
+// $dist-tierra: 3.4%;
+// $dist-marte: 5.17%;
+// $dist-jupiter: 17.6%;
+// $dist-saturno: 32.5%;
+// $dist-urano: 65.25%;
+// $dist-neptuno: 100%;
+
+$dist-mercurio: 16%;
+$dist-venus: 25%;
+$dist-tierra: 37.5%;
+$dist-marte: 50%;
+$dist-jupiter: 62.5%;
+$dist-saturno: 75%;
+$dist-urano: 87.5%;
+$dist-neptuno: 100%;
+
+*{
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+    color: #FFF;    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(25, 24, 41);
+    min-height: 100vh;
+    width: 100%;
+
+    section{
+        width: 100%;
+        height: 100%;        
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+        background: url("/img/estrellas.jpg") no-repeat;
+        background-size: cover;
+
+        .solar-system{
+            height: 90vh;
+            width: 90vh;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .sol{
+                width: 5vh;
+                height: 5vh;
+                border-radius: 50%;
+                background-color: rgb(235, 191, 96);
+                box-shadow: 0 0 20px 10px rgba(235, 191, 96, 0.4);
+            }
+
+            .orbita{
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                border-radius: 50%;
+                border: 1.5px solid rgba(255, 255, 255, 0.3);
+                animation: giro $time-mercurio linear infinite;
+
+                &::before, img{
+                    content: '';
+                    position: absolute;
+                    top: -.5rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 1rem;
+                    height: 1rem;
+                    // background: linear-gradient(0deg, #fbfaf7, #58544a);
+                    border-radius: 50%;
+                }
+
+                img{
+                    width: auto;
+                }
+
+                &.mercurio{
+                    width: $dist-mercurio;
+                    height: $dist-mercurio;
+                }
+
+                &.venus{
+                    width: $dist-venus;
+                    height: $dist-venus;
+                    animation-duration: $time-venus * $time-mercurio;
+                }
+
+                &.tierra {
+                    width: $dist-tierra;
+                    height: $dist-tierra;
+                    animation-duration: $time-tierra * $time-mercurio;
+                }
+
+                &.marte {
+                    width: $dist-marte;
+                    height: $dist-marte;
+                    animation-duration: $time-marte * $time-mercurio;
+                }
+
+                &.jupiter {
+                    width: $dist-jupiter;
+                    height: $dist-jupiter;
+                    animation-duration: $time-jupiter * $time-mercurio;
+                }
+
+                &.saturno {
+                    width: $dist-saturno;
+                    height: $dist-saturno;
+                    animation-duration: $time-saturno * $time-mercurio;
+                }
+
+                &.urano {
+                    width: $dist-urano;
+                    height: $dist-urano;
+                    animation-duration: $time-urano* $time-mercurio;
+                }
+
+                &.neptuno {
+                    width: $dist-neptuno;
+                    height: $dist-neptuno;
+                    animation-duration: $time-neptuno * $time-mercurio;
+                }
+            }
+        }
+    }
+}
+
+@keyframes giro{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) ;
+    }
+}
