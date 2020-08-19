@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 $time-mercurio: 2s;
 $time-venus: 2.5;
 $time-tierra: 4.1;
@@ -6,15 +8,6 @@ $time-jupiter: 49.2;
 $time-saturno: 122.2;
 $time-urano: 348.7;
 $time-neptuno: 684;
-
-// $dist-mercurio: 1.2%;
-// $dist-venus: 2.45%;
-// $dist-tierra: 3.4%;
-// $dist-marte: 5.17%;
-// $dist-jupiter: 17.6%;
-// $dist-saturno: 32.5%;
-// $dist-urano: 65.25%;
-// $dist-neptuno: 100%;
 
 $dist-mercurio: 16%;
 $dist-venus: 25%;
@@ -25,10 +18,29 @@ $dist-saturno: 75%;
 $dist-urano: 87.5%;
 $dist-neptuno: 100%;
 
+$real-dist-mercurio: 1.2%;
+$real-dist-venus: 2.45%;
+$real-dist-tierra: 3.4%;
+$real-dist-marte: 5.17%;
+$real-dist-jupiter: 17.6%;
+$real-dist-saturno: 32.5%;
+$real-dist-urano: 65.25%;
+$real-dist-neptuno: 100%;
+
+$real-diam-mercurio: 0.03;
+$real-diam-venus: 0.08;
+$real-diam-tierra: 0.09;
+$real-diam-marte: 0.04;
+$real-diam-jupiter: 1;
+$real-diam-saturno: 0.83;
+$real-diam-urano: 0.36;
+$real-diam-neptuno: 0.35;
+
 *{
     box-sizing: border-box;
-    transition: all .2s ease-in-out;
+    transition: all 1s ease-in-out;
     color: #FFF;    
+    font-family: 'Quicksand', sans-serif;
 }
 
 body{
@@ -85,6 +97,7 @@ body{
                     &.tierra{
                         height: 1.4rem;
                         top: -0.8rem;
+                        box-shadow: 0 0 6px 2px rgba(0, 149, 255, 0.54);
                     }
 
                     &.saturno{
@@ -144,6 +157,135 @@ body{
                     height: $dist-neptuno;
                     animation-duration: $time-neptuno * $time-mercurio;
                 }
+            }    
+
+        }
+
+        #real-scale, label{
+            position: fixed;
+            top: 30px;
+            right: 35px;
+            z-index: 10;
+
+        }
+        
+        label {
+            top: 20px;
+            right: 20px;
+            border-radius: .5rem;
+            border: 1px solid white;
+            padding: 0.6rem 2.5rem 0.6rem 1.3rem;
+            cursor: pointer;
+            line-height: 1rem;
+            transition-duration: .1s;
+            
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        #real-scale:checked ~ .solar-system {
+            left: 1vw;
+            width: 190vw;
+            height: 190vw;
+
+            .sol {
+                position: absolute;
+                left: 45%;
+                transform: translateX(-50%);
+                z-index: 2;
+                width: 40vh;
+                height: 45vh;
+            }
+
+            .orbita {
+                animation: none;
+                transform: rotate(90deg);
+                border-width: 1px;
+                border-radius: 0;
+                width: 100% !important;
+
+                img {
+                    &.mercurio {
+                        height: 150px * $real-diam-mercurio;
+                        top: -150px * $real-diam-mercurio / 2 - 1;
+                    }
+
+                    &.venus {
+                        height: 150px * $real-diam-venus;
+                        top: -150px * $real-diam-venus / 2 - 1;
+                    }
+
+                    &.tierra {
+                        height: 150px * $real-diam-tierra;
+                        top: -150px * $real-diam-tierra / 2 - 1;
+                    }
+
+                    &.marte {
+                        height: 150px * $real-diam-marte;
+                        top: -150px * $real-diam-marte / 2 - 1;
+                    }
+
+                    &.jupiter {
+                        height: 150px * $real-diam-jupiter;
+                        top: -150px * $real-diam-jupiter / 2 - 1;
+                    }
+
+                    &.saturno {
+                        height: 150px * $real-diam-saturno;
+                        top: -150px * $real-diam-saturno / 2 - 1;
+                    }
+
+                    &.urano {
+                        height: 150px * $real-diam-urano;
+                        top: -150px * $real-diam-urano / 2 - 1;
+                    }
+
+                    &.neptuno {
+                        height: 150px * $real-diam-neptuno;
+                        top: -150px * $real-diam-neptuno / 2 - 1;
+                    }
+                }
+
+                &.mercurio {
+                    width: $real-dist-mercurio;
+                    height: $real-dist-mercurio;
+                }
+
+                &.venus {
+                    width: $real-dist-venus;
+                    height: $real-dist-venus;
+                }
+
+                &.tierra {
+                    width: $real-dist-tierra;
+                    height: $real-dist-tierra;
+                }
+
+                &.marte {
+                    width: $real-dist-marte;
+                    height: $real-dist-marte;
+                }
+
+                &.jupiter {
+                    width: $real-dist-jupiter;
+                    height: $real-dist-jupiter;
+                }
+
+                &.saturno {
+                    width: $real-dist-saturno;
+                    height: $real-dist-saturno;
+                }
+
+                &.urano {
+                    width: $real-dist-urano;
+                    height: $real-dist-urano;
+                }
+
+                &.neptuno {
+                    width: $real-dist-neptuno;
+                    height: $real-dist-neptuno;
+                }
             }
         }
     }
@@ -159,28 +301,56 @@ body{
 }
 
 @media (max-width:992px){
-    body section .solar-system {
-        height: 90vw;
-        width: 90vw;
+    body section {
 
-        .orbita img{
-            top: -0.3rem;
-            height: 0.5rem;     
-            
-            &.tierra {
-                height: .7rem;
-                top: -0.35rem;
-            }
+        label{
+            font-size: .8rem;
+            padding: 5px 25px 5px 10px;
+            top: 10px;
+            right: 10px;
+        }
 
-            &.saturno {
-                height: .8rem;
-                top: -.4rem;
-            }
+        #real-scale{
+            top: 15px;
+            right: 15px;
+        }
 
-            &.jupiter {
-                height: 1.1rem;
-                top: -.55rem;
+        .solar-system {
+            height: 90vw;
+            width: 90vw;
+    
+            .orbita img{
+                top: -0.3rem;
+                height: 0.5rem;     
+                
+                &.tierra {
+                    height: .7rem;
+                    top: -0.35rem;
+                }
+    
+                &.saturno {
+                    height: .8rem;
+                    top: -.4rem;
+                }
+    
+                &.jupiter {
+                    height: 1.1rem;
+                    top: -.55rem;
+                }
             }
         }
-    }
+
+        #real-scale:checked ~ .solar-system{
+            width: 190vh;
+            height: 190vh;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            top: 0;
+
+            .sol{
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }    
 }

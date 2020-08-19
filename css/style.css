@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 * {
   box-sizing: border-box;
-  transition: all .2s ease-in-out;
-  color: #FFF; }
+  transition: all 1s ease-in-out;
+  color: #FFF;
+  font-family: 'Quicksand', sans-serif; }
 
 body {
   margin: 0;
@@ -49,7 +51,8 @@ body {
           border-radius: 50%; }
           body section .solar-system .orbita img.tierra {
             height: 1.4rem;
-            top: -0.8rem; }
+            top: -0.8rem;
+            box-shadow: 0 0 6px 2px rgba(0, 149, 255, 0.54); }
           body section .solar-system .orbita img.saturno {
             height: 1.6rem;
             top: -0.8rem; }
@@ -87,6 +90,87 @@ body {
           width: 100%;
           height: 100%;
           animation-duration: 1368s; }
+    body section #real-scale, body section label {
+      position: fixed;
+      top: 30px;
+      right: 35px;
+      z-index: 10; }
+    body section label {
+      top: 20px;
+      right: 20px;
+      border-radius: .5rem;
+      border: 1px solid white;
+      padding: 0.6rem 2.5rem 0.6rem 1.3rem;
+      cursor: pointer;
+      line-height: 1rem;
+      transition-duration: .1s; }
+      body section label:hover {
+        background-color: rgba(255, 255, 255, 0.15); }
+    body section #real-scale:checked ~ .solar-system {
+      left: 1vw;
+      width: 190vw;
+      height: 190vw; }
+      body section #real-scale:checked ~ .solar-system .sol {
+        position: absolute;
+        left: 45%;
+        transform: translateX(-50%);
+        z-index: 2;
+        width: 40vh;
+        height: 45vh; }
+      body section #real-scale:checked ~ .solar-system .orbita {
+        animation: none;
+        transform: rotate(90deg);
+        border-width: 1px;
+        border-radius: 0;
+        width: 100% !important; }
+        body section #real-scale:checked ~ .solar-system .orbita img.mercurio {
+          height: 4.5px;
+          top: -3.25px; }
+        body section #real-scale:checked ~ .solar-system .orbita img.venus {
+          height: 12px;
+          top: -7px; }
+        body section #real-scale:checked ~ .solar-system .orbita img.tierra {
+          height: 13.5px;
+          top: -7.75px; }
+        body section #real-scale:checked ~ .solar-system .orbita img.marte {
+          height: 6px;
+          top: -4px; }
+        body section #real-scale:checked ~ .solar-system .orbita img.jupiter {
+          height: 150px;
+          top: -76px; }
+        body section #real-scale:checked ~ .solar-system .orbita img.saturno {
+          height: 124.5px;
+          top: -63.25px; }
+        body section #real-scale:checked ~ .solar-system .orbita img.urano {
+          height: 54px;
+          top: -28px; }
+        body section #real-scale:checked ~ .solar-system .orbita img.neptuno {
+          height: 52.5px;
+          top: -27.25px; }
+        body section #real-scale:checked ~ .solar-system .orbita.mercurio {
+          width: 1.2%;
+          height: 1.2%; }
+        body section #real-scale:checked ~ .solar-system .orbita.venus {
+          width: 2.45%;
+          height: 2.45%; }
+        body section #real-scale:checked ~ .solar-system .orbita.tierra {
+          width: 3.4%;
+          height: 3.4%; }
+        body section #real-scale:checked ~ .solar-system .orbita.marte {
+          width: 5.17%;
+          height: 5.17%; }
+        body section #real-scale:checked ~ .solar-system .orbita.jupiter {
+          width: 17.6%;
+          height: 17.6%; }
+        body section #real-scale:checked ~ .solar-system .orbita.saturno {
+          width: 32.5%;
+          height: 32.5%; }
+        body section #real-scale:checked ~ .solar-system .orbita.urano {
+          width: 65.25%;
+          height: 65.25%; }
+        body section #real-scale:checked ~ .solar-system .orbita.neptuno {
+          width: 100%;
+          height: 100%; }
 
 @keyframes giro {
   0% {
@@ -94,6 +178,14 @@ body {
   100% {
     transform: rotate(360deg); } }
 @media (max-width: 992px) {
+  body section label {
+    font-size: .8rem;
+    padding: 5px 25px 5px 10px;
+    top: 10px;
+    right: 10px; }
+  body section #real-scale {
+    top: 15px;
+    right: 15px; }
   body section .solar-system {
     height: 90vw;
     width: 90vw; }
@@ -108,6 +200,15 @@ body {
         top: -.4rem; }
       body section .solar-system .orbita img.jupiter {
         height: 1.1rem;
-        top: -.55rem; } }
+        top: -.55rem; }
+  body section #real-scale:checked ~ .solar-system {
+    width: 190vh;
+    height: 190vh;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    top: 0; }
+    body section #real-scale:checked ~ .solar-system .sol {
+      background-color: transparent;
+      box-shadow: none; } }
 
 /*# sourceMappingURL=style.css.map */
