@@ -161,20 +161,22 @@ body{
 
         }
 
-        #real-scale, label{
+        #real-scale{
+            top: 10px;
+            right: 10px;
             position: fixed;
-            top: 30px;
-            right: 35px;
             z-index: 10;
-
+            display: none;
         }
         
         label {
+            position: fixed;
+            z-index: 10;
             top: 20px;
             right: 20px;
             border-radius: .5rem;
             border: 1px solid white;
-            padding: 0.6rem 2.5rem 0.6rem 1.3rem;
+            padding: 0.6rem 1.1rem;
             cursor: pointer;
             line-height: 1rem;
             transition-duration: .1s;
@@ -182,6 +184,39 @@ body{
             &:hover{
                 background-color: rgba(255, 255, 255, 0.15);
             }
+
+            &:active{
+                transform: scale(0.9);
+            }            
+
+            span{
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                margin-left: 5px;
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                border-radius: 1px;
+                border-radius: 0;
+                position: relative;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    bottom: 2px;
+                    left: 50%;
+                    transform: rotate(45deg);
+                    width: 3px;
+                    height: 10px;
+                    border-width: 0 2px 2px 0;
+                    border-color: #FFF;
+                    border-style: solid;
+                    opacity: 0;
+                }
+            }
+        }
+
+        #real-scale:checked ~ label span::before{
+            opacity: 1;
         }
 
         #real-scale:checked ~ .solar-system {
