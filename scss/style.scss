@@ -41,6 +41,7 @@ $real-diam-neptuno: 0.35;
     transition: all 1s ease-in-out;
     color: #FFF;    
     font-family: 'Quicksand', sans-serif;
+    user-select: none;
 }
 
 body{
@@ -74,8 +75,8 @@ body{
                 width: 5vh;
                 height: 5vh;
                 border-radius: 50%;
-                background-color: rgb(235, 191, 96);
-                box-shadow: 0 0 20px 10px rgba(235, 191, 96, 0.4);
+                background-color: #f5dca5;
+                box-shadow: 0 0 35px 14px rgba(255, 217, 134, 0.52);
             }
 
             .orbita{
@@ -88,7 +89,7 @@ body{
 
                 img{
                     position: absolute;
-                    top: -.5rem;
+                    top: -.6rem;
                     left: 50%;
                     transform: translateX(-50%);
                     height: 1rem;
